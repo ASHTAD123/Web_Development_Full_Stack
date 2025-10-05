@@ -1,0 +1,67 @@
+/* Universal Selectors */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/* Type Selector */
+p{
+    font-size: 26px;
+    margin : 30px 30px; /*Top-Bottom Left-Right*/
+    margin : 10px 25px 10px /*Top Left-Right Bottom */;
+    margin : 10px 10px 10px 10px;/* [ROUND CLOCK PATTERN] Top Right Left Bottom*/
+    background-color: palegoldenrod;
+}
+
+/* Class Selector */
+.highlight{
+    background-color: brown;
+}
+
+/* ID Selector */
+#header{
+    background-color: blue;
+}
+
+/* Attribute Selector */
+input[type="text"]{
+    border: 10px dashed;
+}
+
+/* Descendent Selectors [Read right to left]*/ 
+/* Descendents generally includes immediate child also but here we are excluding them */
+article p:not(article >p){
+    font-style: italic;
+}
+
+/* Child Selector applies to all paragraphs inside div */
+div > p {
+    background-color:#880404;
+}
+
+/* Adjacent Sibling Selector */
+h1 +p{
+    font-weight: bolder;
+}
+
+/* General Sibling Selector */
+h2 ~p{
+    	color:#860303;
+}
+
+/* PSEUDO-CLASS SELECTOR */
+a:hover{
+    background-color: #71e31a;
+}
+
+/* PSEUDO-ELEMENT SELECTOR */
+p::first-letter{
+    font-weight:bold;
+	font-size:30px;
+}
+/* GROUPING SELECTOR */
+h1,h2,h3{
+
+color:orange;
+}

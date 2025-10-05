@@ -1,0 +1,124 @@
+body{
+    font-family: 'Courier New',' Courier, monospace';
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+.nav-container{
+    
+    margin-bottom: 40px;
+
+}
+.navbar{
+    background-color: aquamarine;
+    padding: 10px;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar li{
+    display: inline;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+     position:relative ;
+}
+
+.navbar .loginBtn{
+    background-color: blue;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.navbar a::after{
+    content: "abc";
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: blue;
+     transform: scaleY(0);
+    transition: transform 0.3s ease-in-out;
+}
+.navbar a:hover::after{
+    transform: scaleX(1);
+}
+
+.nav-container1{
+    border-radius: 2px;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* ------------- VERTICAL NAVBAR --------------- */
+.verticalNavbar{
+    padding: 0;
+    margin: 0;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #1a0707;
+
+}
+
+.nav-container1{
+    background-color: aqua;
+  border: #ec1a1a;  
+   margin: 10px;
+}
+
+.verticalNavbar li{
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+.verticalNavbar a{
+      display:block;
+     text-decoration: none;
+     font-size:x-large;
+     color: #f2e9e9;
+     width: 100%;
+}
+a:hover{
+    background-color:rgb(38, 147, 211);
+    width: 150px;
+    border-radius: 13px;
+    padding: 5px;
+}
+
+.verticalNavbar .loginBtn1{
+        border: #1a1a1a;
+        border-radius: 13px;
+        margin-top:10px;
+        padding: 10px;
+        width: 140px;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        background-color: rgb(6, 211, 247);
+        cursor: pointer;
+    
+}
+
+.verticalNavbar .loginBtn1:hover{
+        background-color:rgb(38, 147, 211);
+}

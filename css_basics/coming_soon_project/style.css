@@ -1,0 +1,55 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    background: red;
+    font-family: "Poppins", sans-serif;
+}
+
+.container{
+    background: linear-gradient(134deg,red,yellow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.content{
+    text-align: center;
+    border-radius: 12px;
+    padding: 2rem;
+    background-color: rgba(240, 221, 221, 0.477);
+}
+
+.logo{
+    height: 150px;
+    width: 200px;
+    object-fit: contain;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="email"]{
+    padding: 8px;
+    border-radius: 8px;
+    border: 0px solid #ccc;
+    margin-bottom: 20px;
+}
+button{
+    padding: 8px;
+    border-radius: 8px;
+    color: white;
+    background-color: rgb(32, 27, 21);   
+    transition: background-color ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.9);
+
+}
+
+button:hover{
+     background-color: rgb(240, 117, 15);  
+}

@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+}
+.item{
+    background-color: aqua;
+    border: 1px solid black;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(2,50fr);
+    grid-template-rows: 100vh;
+}

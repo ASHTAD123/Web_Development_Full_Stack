@@ -1,0 +1,84 @@
+
+html,body {
+  margin: 0;
+  padding: 0;
+}
+body{
+    margin: 0;
+     font-family: "Poppins", sans-serif;
+    /* background: linear-gradient(134deg,rgb(22, 174, 234),yellow); */
+    background: #0d2ee996;
+    font-size: large;
+}
+
+.grid-container{
+    margin: 10;
+    display: grid;
+    grid-template-columns: repeat(2,50fr);
+    grid-template-rows: 100vh;
+}
+
+.item1{
+    grid-column: 1/1;
+    color: white;
+    font-size: xxx-large;
+    /* background-color: #121b4c; */
+
+}
+.item2{
+        grid-template-columns: repeat(1,0fr);
+        /* background-color: wheat; */
+}
+
+.container{
+    color: black;
+    /* background-color: aquamarine; */
+    height: 90%; 
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+form{
+    margin-top: 80px;
+    background-color: rgba(255, 255, 255, 0.597);
+    border-radius: 10px;    
+    padding: 100px;  
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+input{
+        padding: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: large;
+        border-radius: 10px;
+        background: #eae7e6;
+        border: none;
+}
+button{
+      width: 80px;
+      border-radius: 10px;
+      padding: 10px;
+      border: none;
+      margin-top: 30px;
+      margin-right: 20px;
+      height: 40px;
+      background-color: rgb(120, 132, 227);
+      cursor: pointer;
+      font-size: large;
+      color: white;
+}
+
+button[type="reset"]{
+    background-color: red;
+}
+button:hover{
+    /* background-color: #20d2e2; */
+}
+
+.text{
+    background-color: #121b4c;
+}
