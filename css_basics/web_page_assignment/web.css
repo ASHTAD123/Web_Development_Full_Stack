@@ -1,0 +1,60 @@
+body{
+    background-color: rgb(17, 14, 11);
+}
+.carouselContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.carousel-item img{
+    height: 55vh;
+    width: 60vw;
+}
+
+.cardComponent{
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    background-color: aliceblue;
+    justify-content: space-evenly;
+}
+.mycard{
+    height: 35vh;
+    width: 25vw;
+    background-color: rgb(182, 196, 196);
+    border-radius: 20px;
+}
+
+@media(min-width:260px) and (max-width:768px){
+
+    .cardComponent{
+        display: flex;
+        flex-direction: column;        
+        background-color: rgb(68, 95, 120);
+}
+.mycard{
+    height: 35vh;
+    width: 85vw;
+    background-color: rgb(23, 194, 194);
+}
+
+}
+@media(min-width:769px) and (max-width:1024px){
+
+    .cardComponent{
+        display: flex;
+        flex-direction: row;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 20px;
+        background-color: aliceblue;
+}
+    .mycard{
+        height: 35vh;
+        width: 30vw;
+        background-color: rgb(7, 34, 34);
+    }
+}

@@ -29,6 +29,7 @@ let citiesVisited = ["Mumbai","Gujrat","Delhi"]
 citiesVisited[5]="london"//works
 citiesVisited[6]="rome"
 citiesVisited[citiesVisited.length]="nagpur"; //this also works
+citiesVisited[citiesVisited.length]="kanpur"
 citiesVisited.push("UP");
 console.log(citiesVisited);
 

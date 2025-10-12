@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>px vs viewport demo</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      h1 {
+        margin-bottom: 1rem;
+      }
+
+      .example {
+        border: 2px solid #333;
+        padding: 1rem;
+        width: 90%;
+        max-width: 700px;
+        text-align: center;
+      }
+
+      .px-box {
+        width: 300px;
+        height: 150px;
+        background: lightcoral;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+
+      .vw-box {
+        width: 50vw; /* 50% of viewport width */
+        height: 30vh; /* 30% of viewport height */
+        background: lightblue;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+      }
+
+      .note {
+        font-size: 0.9rem;
+        color: #666;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎯 px vs viewport units</h1>
+
+    <div class="example">
+      <h3>Box using <code>px</code></h3>
+      <div class="px-box">300px × 150px</div>
+      <p class="note">
+        Fixed size — doesn’t change when you resize the browser.
+      </p>
+    </div>
+
+    <div class="example">
+      <h3>Box using <code>vw/vh</code></h3>
+      <div class="vw-box">50vw × 30vh</div>
+      <p class="note">Responsive — changes with screen size.</p>
+    </div>
+  </body>
+</html>
