@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(17, 14, 11);
+   background-color: azure;
 }
 .carouselContainer{
     display: flex;
@@ -20,12 +20,17 @@ body{
     padding-bottom: 20px;
     background-color: aliceblue;
     justify-content: space-evenly;
+    border-radius: 10px;
 }
 .mycard{
     height: 35vh;
     width: 25vw;
-    background-color: rgb(182, 196, 196);
-    border-radius: 20px;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+       border-radius: 20px;
 }
 
 @media(min-width:260px) and (max-width:768px){
@@ -34,11 +39,12 @@ body{
         display: flex;
         flex-direction: column;        
         background-color: rgb(68, 95, 120);
-}
-.mycard{
-    height: 35vh;
-    width: 85vw;
-    background-color: rgb(23, 194, 194);
+ }
+
+ .mycard{
+     height: 35vh;
+     width: 85vw;
+     background-color: rgb(23, 194, 194);
 }
 
 }
