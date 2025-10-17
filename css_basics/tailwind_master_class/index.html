@@ -9,6 +9,7 @@
     <title>tailwind_master_class</title>
   </head>
   <body>
+    
     <div id="root"></div>
   
     <!-- EQUAL DIVISION -->
@@ -23,12 +24,75 @@
       <div class="min-h-{200px} rounded-lg bg-orange-500 sm:col-span-2">A</div>
       <div class="min-h-{200px} rounded-lg bg-yellow-500 bg-purp sm:col-span-10">B</div> -->
 
-      <!-- Like tailwind -->
-      <div class="grid gap-4 m-4 sm:grid-cols-12 grid-cols-2 sm:block">
+      <!-- Like tailwind website-->
+      <!-- <div class="grid gap-4 m-4 sm:grid-cols-12 grid-cols-2 sm:block">
       <div class="min-h-{200px} rounded-lg bg-orange-500 sm:col-span-2 sm:block hidden">A</div>
       <div class="min-h-{200px} rounded-lg bg-yellow-500 bg-purp sm:col-span-10">B</div>
-      <div class="min-h-{200px} rounded-lg bg-yellow-500 bg-purp sm:col-span-10 sm:block hidden">C</div>
+      <div class="min-h-{200px} rounded-lg bg-yellow-500 bg-purp sm:col-span-10 sm:block hidden">C</div> -->
     </div>
+
+  <div class="flex justify-center items-center min-h-screen bg-gray-950 flex-col">
+     
+   <div id="garland-top" class="mb-30 flex flex-row flex-wrap justify- text-cyan-50"></div>
+   <h1 class="text-amber-50 text-5xl font-bold">Happy Diwali</h1>
+ 
+    <script>
+  
+
+      function garland(containerId){
+           
+       const container = document.getElementById(containerId);
+     
+       const colors = [
+        "bg-red-600",
+        "bg-yellow-300",
+        "bg-orange-500",
+        "bg-blue-500",
+        "bg-green-500",
+      ];
+      const repeatCount = 4;
+        for (let i = 0; i < repeatCount; i++) {
+       
+        for (let j = 0; j < colors.length; j++) {
+       
+          // thread before flower
+          const thread1 = document.createElement("div");
+          thread1.className = "bg-amber-700 w-5 h-1";
+          container.appendChild(thread1);
+
+          // flower
+          const flower = document.createElement("div");
+          flower.className = `w-5 h-5 ${colors[j]} rounded-3xl`;
+          container.appendChild(flower);
+
+          // thread after flower
+          const thread2 = document.createElement("div");
+          thread2.className = "bg-amber-700 w-5 h-1";
+          container.appendChild(thread2);
+       }
+      }
+   }
+     
+    garland('garland-top')
+    
+    </script>
+
+    <div>
+        <h1 class="text-amber-50 text-5xl font-bold mt-10">Tailwind CSS Buttons Example </h1><br>
+        <button type="submit" class="bg-red-600 p-2 rounded-xl w-30 m-2 hover:bg-amber-50 hover:cursor-pointer">RED</button>
+        <button type="submit" class="bg-yellow-300 p-2 rounded-xl w-30 m-2 hover:bg-amber-50 hover:cursor-pointer">YELLOW</button>
+        <button type="submit" class="bg-orange-500 p-2 rounded-xl w-30 m-2 border-5 outline-4 hover:bg-amber-50 hover:cursor-pointer">ORANGE</button>
+        <button type="submit" class="bg-blue-500 p-2 rounded-xl w-30 m-2 hover:bg-amber-50 hover:cursor-pointer">BLUE</button>
+        <button type="submit" class="bg-green-500 p-2 rounded-xl w-30 m-2 hover:bg-amber-50 hover:cursor-pointer">GREEN</button>  
+    </div>
+   
+    <div id="garland-bottom" class="mt-30 flex flex-row flex-wrap justify- text-cyan-50"></div>
+  
+  </div>
+    
+    <script>
+            garland('garland-bottom')        
+      </script>
 
   </body>
 </html>
