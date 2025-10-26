@@ -11,7 +11,7 @@ function findMax(arr) {
 }
 
 function removeDuplicates(arr) {
-  return [...new Set(arr)];
+  return [...new Set(arr)];   
 }
 
 function flattenArray(arr) {
