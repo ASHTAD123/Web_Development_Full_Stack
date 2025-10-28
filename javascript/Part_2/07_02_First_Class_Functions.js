@@ -4,7 +4,7 @@ let totalCost = calculateTotal(499 * 100)
 
 
 
-//First class function example
+//1st example of First class function 
 function makeTea(typeOfTea){
     return `maketea: ${typeOfTea}`
 }
@@ -27,3 +27,19 @@ function createTeaMaker(){
 
 let teaMaker = createTeaMaker();
 console.log(teaMaker('ash'));
+
+
+//2nd Example
+function launchGTA(typeOfGTA){
+    return `launchGTA: ${typeOfGTA}`
+}
+
+function proccessGTAOnline(launchGTAFunction){
+    return launchGTAFunction('Enchanced GTA V')
+}
+
+let game = proccessGTAOnline(launchGTA)
+console.log(game);
+
+
+

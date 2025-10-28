@@ -1,3 +1,4 @@
+//sum of N numbers
 function sumOfN(n) {
   let sum = 0;
 
@@ -7,6 +8,7 @@ function sumOfN(n) {
   return sum;
 }
 
+//Multuplication table
 function printMultiplicationTable(n) {
   let product;
   let table = [];
@@ -19,6 +21,7 @@ function printMultiplicationTable(n) {
   return table;
 }
 
+//count vowels
 function countVowels(str) {
   let count = 0;
   let vowels = "aeiouAEIOU";
@@ -31,6 +34,7 @@ function countVowels(str) {
   return count;
 }
 
+//square numbers
 let arr = [1,2,3,4,5];
 const squareNumbers = (arr) => {
   let c= arr.map(n=> n * 2);
@@ -38,4 +42,5 @@ const squareNumbers = (arr) => {
 };
  let res = squareNumbers(arr);
  console.log(res);
+
  
