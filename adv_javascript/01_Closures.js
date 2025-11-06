@@ -11,17 +11,12 @@ function outer(){
 }
 
 let increment = outer();
-let increment1 = outer();
 
 console.log(increment());
 console.log(increment());
 console.log(increment());
 console.log(increment());
 
-console.log(increment1()+1);
-console.log(increment1());
-console.log(increment1());
-console.log(increment1());
 
 
 //Example 2

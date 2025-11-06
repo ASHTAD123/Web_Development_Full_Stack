@@ -4,7 +4,7 @@ function sayHello() {
 
 setTimeout(() => {
   sayHello();
-}, 4000);
+}, 10);
 
 console.log("chaicode");
 
