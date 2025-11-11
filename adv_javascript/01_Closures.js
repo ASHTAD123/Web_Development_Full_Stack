@@ -39,8 +39,9 @@ function makeFunc(){
     function displayName(){
         console.log(name1);
     }
-
+    
     return displayName;
+
 }
 const myFunc = makeFunc();
-console.log(myFunc);
+myFunc();

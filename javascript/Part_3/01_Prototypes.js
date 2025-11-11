@@ -12,29 +12,31 @@ let samsung = {
 let linusTech = {}
 
 console.log(`pc`,pc.__proto__);
-console.log(`samsung`,samsung.__proto__);
+console.log(`samsung pc`,samsung.__proto__);
+console.log();
 
+// ==================================================================================================
 
 //Another way
 let genericRobot ={
     eyes:"Samsung camera"
 }
-
 let chittiRobo = {
   specialAbility: "360° Head Rotation",
 };
 
 // Syntax
-// Object.setPrototypeOf(objectInsideWhichPrototypeIsInject, prototypeObject);
+// Object.setPrototypeOf(objectInsideWhichPrototypeIsInjected, prototypeObject);
 
 Object.setPrototypeOf(chittiRobo,genericRobot)
 
 // console.log(`chittiRobo`,chittiRobo);
 console.log(`chittiRobo`,Object.getPrototypeOf(chittiRobo));
 console.log(`chittiRobo`,chittiRobo.specialAbility);
+console.log();
 
 
-// ==================================================
+// ===================================================================================================
 
 let genericCar={
     headlights:"2",
@@ -51,7 +53,7 @@ console.log(tarzan.__proto__);
  Object.setPrototypeOf(tarzan,genericCar)
  console.log(Object.getPrototypeOf(tarzan));
 
-// ==================================================
+// ==================================================================================================
  let parent={
     parentBehaviour:"parent way"
  }
@@ -62,4 +64,3 @@ console.log(tarzan.__proto__);
 
  Object.setPrototypeOf(child,parent)
  console.log(Object.getPrototypeOf(child));
- 

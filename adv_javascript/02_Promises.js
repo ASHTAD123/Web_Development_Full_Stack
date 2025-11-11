@@ -1,4 +1,4 @@
-// //Without Promises
+//Without Promises
 function sayHello() {
   console.log("I would like to say Hello");
 }
@@ -42,7 +42,7 @@ sayHello_1()
 
 
 
-// //Example
+//Example
 function fetchData(){
 
     return new Promise((resolve,reject)=>{
