@@ -16,10 +16,8 @@ const getName = example.getName;
 console.log(getName());//here it doesn't have context to 'this'
 
 
-//bind method doesn't run the function , it returns the function
-
-
 //with bind()
+//bind method doesn't run the function , it returns the function
 console.log("With bind()");
 const getName_1 = getName.bind(example); //returns a new function with 'this context'
 console.log(getName_1());
