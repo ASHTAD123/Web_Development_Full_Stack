@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartTotalMessage = document.getElementById("cart-total");
   const totalPriceDisplay = document.getElementById("total-price");
   const checkOutBtn = document.getElementById("checkout-btn");
-
+  let totalPrice = 0;
+  
+  //Product List Loop
   products.forEach((product) => {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product");
@@ -24,7 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     productList.appendChild(productDiv);
   });
 
+  //Product List Event Listener
   productList.addEventListener("click", (e) => {
+   
     if (e.target.tagName === "BUTTON") {
       const productId = parseInt(e.target.getAttribute("data-id"));
       const product = products.find((p) => p.id === productId);
@@ -32,29 +36,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
   function addToCart(product) {
     cart.push(product);
     renderCart();
   }
 
+  cartItems.addEventListener("click",(e)=>{
+
+     if(e.target.tagName==="BUTTON"){
+      
+       let id = parseInt(e.target.getAttribute("data-id"));
+       let price = parseInt(e.target.getAttribute("id"));
+       console.log("Remove btn clicked" +id );
+       console.log("Price to remove" +price);
+       
+      let newTotalPrice = totalPrice -= price;
+        totalPriceDisplay.textContent = `${newTotalPrice.toFixed(2)}`;
+     }
+
+  })
+
   function renderCart() {
     
+ 
     cartItems.innerText = "";
-    let totalPrice = 0;
-
+    
     if (cart.length > 0) {
       
       emptyCartMessage.classList.add("hidden");
       cartTotalMessage.classList.remove("hidden");
       
+      totalPrice = 0;
+
       cart.forEach((item, index) => {
         
         totalPrice += item.price;
+       
         const cartItem = document.createElement("div");
         cartItem.innerHTML = `
         ${item.name} - $${item.price.toFixed(2)}
-        <button data-id="${item.id}">Remove</button>`;
-
+        <button id="${item.price}" data-id="${item.id}" >Remove</button>`;
 
 
         cartItems.appendChild(cartItem);
