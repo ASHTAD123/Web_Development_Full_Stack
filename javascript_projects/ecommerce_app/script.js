@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   const products = [
     { id: 1, name: "Product 1", price: 10.00 },
     { id: 2, name: "Product 2", price: 20.00 },
     { id: 3, name: "Product 3", price: 50.00 },
   ];
 
-  const cart = [];
+  let cart = [];
 
   const productList = document.getElementById("product-list");
   const cartItems = document.getElementById("cart-items");
@@ -14,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalPriceDisplay = document.getElementById("total-price");
   const checkOutBtn = document.getElementById("checkout-btn");
   let totalPrice = 0;
+  
+  renderCart();
   
   //Product List Loop
   products.forEach((product) => {
@@ -33,33 +36,52 @@ document.addEventListener("DOMContentLoaded", () => {
       const productId = parseInt(e.target.getAttribute("data-id"));
       const product = products.find((p) => p.id === productId);
       addToCart(product);
+      saveCartItems()
     }
   });
-
 
   function addToCart(product) {
     cart.push(product);
     renderCart();
   }
+  
+  function saveCartItems() {
+    
+    localStorage.setItem("cart_items", JSON.stringify(cart));
+    console.log("Cart items : ");
+    console.log(JSON.parse(localStorage.getItem("cart_items")));
+    
+  }
 
   cartItems.addEventListener("click",(e)=>{
 
-     if(e.target.tagName==="BUTTON"){
-      
+     if(e.target.tagName ==="BUTTON"){
+   
        let id = parseInt(e.target.getAttribute("data-id"));
        let price = parseInt(e.target.getAttribute("id"));
-       console.log("Remove btn clicked" +id );
-       console.log("Price to remove" +price);
+       let newTotalPrice = (totalPrice -= price);
+
+       //Update Array
+       cart = cart.filter((item)=> id!=item.id)
+       console.log(cart);
        
-      let newTotalPrice = totalPrice -= price;
-        totalPriceDisplay.textContent = `${newTotalPrice.toFixed(2)}`;
+       //Update Local Storage
+       localStorage.setItem("cart_items", JSON.stringify(cart));
+
+       //Remove from UI
+       const item = e.target.closest("div");
+       item.remove();
+
+       totalPriceDisplay.textContent = `${newTotalPrice.toFixed(2)}`;
      }
+
 
   })
 
   function renderCart() {
     
- 
+    console.log("Render");
+    
     cartItems.innerText = "";
     
     if (cart.length > 0) {
@@ -74,14 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
         totalPrice += item.price;
        
         const cartItem = document.createElement("div");
+        
         cartItem.innerHTML = `
         ${item.name} - $${item.price.toFixed(2)}
-        <button id="${item.price}" data-id="${item.id}" >Remove</button>`;
-
+        <button class="removeBtn" id="${item.price}" data-id="${
+          item.id
+        }  ">Remove</button>`;
 
         cartItems.appendChild(cartItem);
         totalPriceDisplay.textContent = `${totalPrice.toFixed(2)}`;
-    
     
       });
     
