@@ -88,6 +88,15 @@ document.addEventListener('DOMContentLoaded', (e)=>{
          }
    })
 
+   restartQuizBtn.addEventListener("click",()=>{
+
+    currentQuestionIndex = 0;
+    score = 0 ;
+    resultContainer.classList.add('hidden');
+    startQuiz();
+   })
+
+
    function showResult(){
 
         questionContainer.classList.add('hidden'); 
