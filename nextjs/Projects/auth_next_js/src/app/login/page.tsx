@@ -1,17 +1,51 @@
 "use client";
 import Link from "next/link";
 import React from "react";
+import axios from "axios";
 import { useRouter } from "next/navigation";
-import { axios } from "axios";
+import { useEffect } from "react";
+
 
 export default function Login() {
  
-const [user, setUser] = React.useState({
-    email: "",
-    password: "",
-  });
 
-  const onLogin = async () => {};
+    const router = useRouter();
+
+    const [user, setUser] = React.useState({
+      email: "",
+      password: "",
+    });
+
+  const [buttonDisabled,setButtonDisabled] = React.useState(false);
+  const [loading,setLoading] = React.useState(false);
+
+    useEffect(()=>{
+  
+        if(user.email.length>0 && user.password.length>0 ){
+            setButtonDisabled(false);
+        }else{
+          setButtonDisabled(true);
+        }
+    },[user]);
+  
+ 
+    const onLogin = async () => {
+
+    try {
+
+       setLoading(true);
+       const response = await axios.post("/api/users/login",user);
+       console.log("Response : ",response);
+
+       router.push("/profile")
+       
+      } catch (error) {
+      console.log("Login failed :",error);
+      
+    }finally{
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-content min-h-screen py-2">
