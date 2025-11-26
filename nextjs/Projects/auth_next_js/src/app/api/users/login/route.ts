@@ -9,6 +9,7 @@ connect();
 export async function POST(request: NextRequest) {
  
   try {
+    
     const requestBody = await request.json();
 
     const {username, email, password} = requestBody;
@@ -53,4 +54,5 @@ export async function POST(request: NextRequest) {
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
+  
 }

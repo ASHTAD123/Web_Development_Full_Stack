@@ -8,7 +8,6 @@ import { useEffect } from "react";
 
 export default function Login() {
  
-
     const router = useRouter();
 
     const [user, setUser] = React.useState({
@@ -21,7 +20,7 @@ export default function Login() {
 
     useEffect(()=>{
   
-        if(user.email.length>0 && user.password.length>0 ){
+        if(user.email.length > 0 && user.password.length > 0 ){
             setButtonDisabled(false);
         }else{
           setButtonDisabled(true);
@@ -40,8 +39,7 @@ export default function Login() {
        router.push("/profile")
        
       } catch (error) {
-      console.log("Login failed :",error);
-      
+         console.log("Login failed :",error);
     }finally{
       setLoading(false);
     }
@@ -49,7 +47,8 @@ export default function Login() {
 
   return (
     <div className="flex flex-col items-center justify-content min-h-screen py-2">
-      <h1 className="mb-15 mt-15 font-bold text-4xl">Login</h1>
+  
+        <h1 className="mb-15 mt-15 font-bold text-4xl">Login</h1>
 
       <hr />
 

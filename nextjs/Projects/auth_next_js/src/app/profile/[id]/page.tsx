@@ -1,20 +1,26 @@
-import * as React from "react";
+
+import React from "react";
+import axios from "axios";
 
 export default function UserProfile({ params }: any) {
  
-  const { id } = React.use(params);
+  const  id  = React.use(params);
  
+
+
   return (
  
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
     
       <h1>Profile</h1>
       <hr />
+
+  
     
       <p className="text-4xl">
         Profile page
         <span className=" p-2 ml-2 rounded bg-orange-500 text-black">
-          {id}
+          id
         </span>
       </p>
     

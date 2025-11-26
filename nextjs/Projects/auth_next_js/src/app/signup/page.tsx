@@ -17,6 +17,7 @@ export default function Signup() {
   const [buttonDisabled,setButtonDisabled] = React.useState(false);
   const [loading,setLoading] = React.useState(false);
 
+
   const onSignup = async()=>{
 
     try {
@@ -30,7 +31,7 @@ export default function Signup() {
         router.push("/login")
 
     } catch (error) {
-      console.log("Signup Failed " ,error);
+      console.log("Signup Failed" ,error);
       
     }finally{
       setLoading(false);
@@ -41,13 +42,10 @@ export default function Signup() {
   useEffect(()=>{
 
       if(user.email.length>0 && user.password.length>0 && user.username.length>0){
-
         setButtonDisabled(false);
-
       }else{
         setButtonDisabled(true);
       }
-
   },[user]);
 
 

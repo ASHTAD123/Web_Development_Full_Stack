@@ -3,29 +3,23 @@ import User from '@/models/userModel';
 import { NextRequest,NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 
-
 connect()
 
 export async function POST(request:NextRequest) {
   
     try {
-      
         const requestBody = await request.json(); 
-
         const {username,email,password} = requestBody;
         console.log("Request Body : " ,requestBody);
         
         //Check if user already exists
         const user = await User.findOne({email});
 
-        if(user){
-            return NextResponse.json({error:"User already exists"},{status:400})
-        }
-
+        if(user) return NextResponse.json({error:"User already exists"},{status:400})
+        
         //Hash password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password,salt);
-
 
         //Create a new User
         const newUser = new User({
@@ -44,9 +38,6 @@ export async function POST(request:NextRequest) {
         })
 
     } catch (error:any) {
-      
         console.log("Inside Signup route catch");
-        
-
     }
 }
